@@ -98,6 +98,12 @@ def run_jo():
         print('Opening stackoverflow')
         webbrowser.open('https://stackoverflow.com/')
 
+    elif 'open website ' in command:
+        ask = command.replace('open website', '')
+        talk('opening'+ask)
+        print('opening '+ask)
+        webbrowser.open('https://'+ask+'/')
+
     elif 'open code blocks' in command:
         talk('Opening code blocks')
         print('Opening code blocks')
