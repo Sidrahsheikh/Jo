@@ -6,13 +6,15 @@ import datetime
 import wikipedia as wiki
 import pyjokes
 import os
-import sys as sy
+#import sys as sy
 import wolframalpha
 import time as t
 import requests
 import webbrowser
+import random
 import tkinter as tk
-from tkinter import *
+#from tkinter import *
+from turtle import *
 
 HEIGHT = 500
 WIDTH = 500
@@ -54,6 +56,10 @@ def hello() :
 
     talk('I am Jo')
     talk('how can I help you ?')
+def username() :
+    talk ('What shoud I call you ')
+    name = take_command()
+    talk('welcome '+name)
 
 def run_jo():
 
@@ -98,12 +104,6 @@ def run_jo():
         print('Opening stackoverflow')
         webbrowser.open('https://stackoverflow.com/')
 
-    elif 'open website ' in command:
-        ask = command.replace('open website', '')
-        talk('opening'+ask)
-        print('opening '+ask)
-        webbrowser.open('https://'+ask+'/')
-
     elif 'open code blocks' in command:
         talk('Opening code blocks')
         print('Opening code blocks')
@@ -133,9 +133,6 @@ def run_jo():
         else:
             os.system("shutdown /s /t 1")
 
-    elif 'bus bahut hua band karo' in command:
-        sy.exit(talk("Ok Sid, Take Care."))
-        
     elif 'wait' in command:
         talk(" for how much time you want to stop jo from listening")
         a = int(take_command())
@@ -146,7 +143,7 @@ def run_jo():
     elif "write a note" in command:
             talk("What should i write, sir")
             note = take_command()
-            file = open('jarvis.txt', 'w')
+            file = open('jo.txt', 'w')
             talk("Sir, Should i include date and time")
             snfm = take_command()
             if 'yes' in snfm or 'sure' in snfm:
@@ -159,7 +156,7 @@ def run_jo():
 
     elif "show note" in command:
             talk("Showing Notes")
-            file = open("jarvis.txt", "r")
+            file = open("jo.txt", "r")
             print(file.read())
             talk(file.read(6))
 
@@ -206,13 +203,39 @@ def run_jo():
     elif "what is" in command or "who is" in command:
             client = wolframalpha.Client("API_ID")
             res = client.query(command)
-
             try:
                 print (next(res.results).text)
                 talk (next(res.results).text)
             except StopIteration:
                 print ("No results")
-    else :
+    elif 'lets play game' in command:
+        username()
+        talk('Which game you want to play. guessing game ,Memory game ')
+        said=int(take_command())
+        if 'guessing game ' in said:
+            talk("Okay")
+            talk("Well ,I am thinking of a number between 1 to 20")
+            print("Well , I am thinking of a number between 1 to 20")
+            secretNumber = random.randint(1,20)
+            for guesses_taken in range(1,6):
+                talk("Take a guess")
+                print("Take a guess")
+                guess=int (take_command())
+                if  guess>secretNumber :
+                    talk("Your Guess is too high")
+                    print("Your Guess is too high")
+                elif guess<secretNumber:
+                    talk("Your Guess is too low")
+                    print("Your Guess is too low")
+                else:
+                    break
+                if guess==secretNumber:
+                    talk("God job  you guess the number in "+str(guesses_taken)+" guesses")
+                    print("God job  you guess the number in "+str(guesses_taken)+" guesses")
+                else:
+                    talk("Nope the number I was thinking was "+str(secretNumber))
+                    print("Nope the number I was thinking was "+str(secretNumber))
+    else:
         talk('Please say it again.')
 
 if __name__ == '__main__':
