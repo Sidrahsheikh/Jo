@@ -1,4 +1,3 @@
-
 import speech_recognition as sr
 import pyttsx3
 import pywhatkit
@@ -6,14 +5,13 @@ import datetime
 import wikipedia as wiki
 import pyjokes
 import os
-#import sys as sy
 import wolframalpha
 import time as t
 import requests
 import webbrowser
 import random
 import tkinter as tk
-#from tkinter import *
+from tkinter import *
 from turtle import *
 
 HEIGHT = 500
@@ -39,13 +37,13 @@ def take_command():
     return command
 
 def talk(text):
-    engine = pyttsx3.init( )
+    engine = pyttsx3.init()
     voices = engine.getProperty('voices')
     engine.setProperty('voice', voices[1].id)
     engine.say(text)
     engine.runAndWait()
 
-def hello() :
+def hello():
     hour = int(datetime.datetime.now().hour)
     if hour >= 0 and  hour < 12:
         talk('Good Morning')
@@ -117,7 +115,7 @@ def run_jo():
         os.startfile(codepath)
 
     elif 'are you there' in command:
-        talk('Always at your service Maam')
+        talk('Always at your service')
     elif 'how are you' in command:
         talk('I am fine ,thank you Maam ')
         talk('How are you maam')
@@ -125,6 +123,9 @@ def run_jo():
         talk('I have been created by Sidra')
     elif 'who are you' in command:
         talk('I am your desktop assistant. My name is JO.')
+    elif ' I Love you' in command:
+        talk("Awe, love you too")
+
 
     elif 'shutdown the PC' in command:
         choice = input("Please confirm to shutdown the pc (y or n)")
@@ -209,32 +210,32 @@ def run_jo():
             except StopIteration:
                 print ("No results")
     elif 'lets play game' in command:
-        username()
+        """username()
         talk('Which game you want to play. guessing game ,Memory game ')
         said=int(take_command())
-        if 'guessing game ' in said:
-            talk("Okay")
-            talk("Well ,I am thinking of a number between 1 to 20")
-            print("Well , I am thinking of a number between 1 to 20")
-            secretNumber = random.randint(1,20)
-            for guesses_taken in range(1,6):
-                talk("Take a guess")
-                print("Take a guess")
-                guess=int (take_command())
-                if  guess>secretNumber :
-                    talk("Your Guess is too high")
-                    print("Your Guess is too high")
-                elif guess<secretNumber:
-                    talk("Your Guess is too low")
-                    print("Your Guess is too low")
-                else:
-                    break
-                if guess==secretNumber:
-                    talk("God job  you guess the number in "+str(guesses_taken)+" guesses")
-                    print("God job  you guess the number in "+str(guesses_taken)+" guesses")
-                else:
-                    talk("Nope the number I was thinking was "+str(secretNumber))
-                    print("Nope the number I was thinking was "+str(secretNumber))
+        if 'guessing game ' in said:"""
+        talk("Okay")
+        talk("Well ,I am thinking of a number between 1 to 20")
+        print("Well , I am thinking of a number between 1 to 20")
+        secretNumber = random.randint(1,20)
+        for guesses_taken in range(1,6):
+            talk("Take a guess")
+            print("Take a guess")
+            guess=int (take_command())
+            if  guess>secretNumber :
+                talk("Your Guess is too high")
+                print("Your Guess is too high")
+            elif guess<secretNumber:
+                talk("Your Guess is too low")
+                print("Your Guess is too low")
+            else:
+                break
+            if guess==secretNumber:
+                talk("God job  you guess the number in "+str(guesses_taken)+" guesses")
+                print("God job  you guess the number in "+str(guesses_taken)+" guesses")
+            else:
+                talk("Nope the number I was thinking was "+str(secretNumber))
+                print("Nope the number I was thinking was "+str(secretNumber))
     else:
         talk('Please say it again.')
 
