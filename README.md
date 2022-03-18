@@ -40,19 +40,19 @@ To Run the project
 - Forecasts weather based on the location of the city.
 - Finds a city using Google map.
 
-## Support Command :-
-- Play (Song name)                --To play Music
-- What is the time                --Write this to ask time
-- Search for (ex.Sherlock Holmes) --To search on Wikipedia
-- Make me laugh                   --To tell a joke
-- Open (Google)                   --To Open Google ,Youtube
-- Open Pycharm                    --To open existing applications such as Pycharm,CodeBlocks
-- Write a note                    --This command opens a text file and note down using Speech-to-text module
-- Where is (city name)            --This command open the google map of the city
-- Weather (city name)             --This command give you the weather forecast of the city
+## Support Command :-                 
+- Play (Song name)                  --To play Music
+- What is the time                  --to ask for time
+- Search for (ex.Sherlock Holmes)   --To search on Wikipedia
+- Make me laugh                     --To tell a joke
+- Open (Google)                     --To Open Google ,Youtube
+- Open Pycharm                      --To open existing applications such as Pycharm,CodeBlocks
+- Write a note                      --This command opens a text file and note down using Speech-to-text module
+- Where is (city name)              --This command open the google map of the city
+- Weather (city name)               --This command give you the weather forecast of the city
 - Calculate(matematical expression) --This command perform the mathematical expression
-- Let's play a game               --This command opens a voice based game 
-- Shutdown the PC                 -- To shut down your PC
+- Let's play a game                 --This command opens a voice based game 
+- Shutdown the PC                   --To shut down your PC
 
 
 
