@@ -1,8 +1,6 @@
 # Desktop Assistant
 
-The Desktop voice Assistant who helps the end user to communicate with Desktop Computer with voice and it also respond to the voice commands of the user.
-
-
+The responsive Desktop Assistant who helps the end user to communicate with Desktop using voice command.
 
 ## Run Locally
 To Run the project
