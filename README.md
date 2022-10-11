@@ -1,6 +1,6 @@
 # Desktop Assistant
 
-The responsive Desktop Assistant who helps the end user to communicate with Desktop using voice command.
+A desktop assistant is a responsive tool that allows the end user to interact with their desktop by using voice commands.
 
 ## Run Locally
 To Run the project
@@ -54,4 +54,5 @@ To Run the project
 
 
 
+#### Thank you for reading.
                               
